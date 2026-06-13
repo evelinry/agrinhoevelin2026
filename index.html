@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
+    <style>
+        /* --- Configurações Gerais e Paleta de Cores --- */
+        :root {
+            --primary-color: #2d6a4f; /* Verde Forte */
+            --secondary-color: #52b788; /* Verde Claro/Destaque */
+            --dark-color: #1b4332; /* Verde Escuro/Texto */
+            --light-bg: #f8f9fa; /* Off-white para o fundo */
+            --white: #ffffff;
+            --text-color: #333333;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Cabeçalho e Menu --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Menu Hambúrguer (Mobile) */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 2px 0;
+            transition: var(--transition);
+        }
+
+        /* --- Seção Hero (Banner Principal) --- */
+        .hero {
+            background: linear-gradient(rgba(27, 67, 50, 0.85), rgba(27, 67, 50, 0.85)), linear-gradient(135deg, #2d6a4f, #1b4332);
+            color: var(--white);
+            padding: 160px 0 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* --- Seções de Conteúdo --- */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: var(--dark-color);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Grid de Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        /* Seção de Destaque / Frase */
+        .highlight-section {
+            background-color: var(--white);
+            text-align: center;
+            border-left: 5px solid var(--primary-color);
+            padding: 40px;
+            border-radius: 4px;
+            margin-top: 40px;
+        }
+
+        .highlight-section blockquote {
+            font-size: 22px;
+            font-style: italic;
+            color: var(--dark-color);
+            font-weight: 500;
+        }
+
+        /* --- Rodapé --- */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 0;
+            font-size: 14px;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* --- Responsividade (Mobile) --- */
+        @media (max-width: 768px) {
+            .nav-container {
+                position: relative;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                padding: 20px 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Agro<span>Forte</span></div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#tecnologia">Tecnologia</a></li>
+                    <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+                    <li><a href="#futuro">Futuro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h1>Agro Forte, Futuro Sustentável</h1>
+            <p>O futuro do planeta passa, obrigatoriamente, pelas linhas de plantio e pelas pastagens. Uma força econômica que se moderniza para produzir mais, utilizando menos recursos e preservando a biodiversidade.</p>
+            <a href="#tecnologia" class="btn">Conheça a Tecnologia</a>
+        </div>
+    </section>
+
+    <section id="tecnologia">
+        <div class="container">
+            <h2 class="section-title">A Revolução Tecnológica no Campo</h2>
+            <p style="text-align: center; max-width: 700px; margin: -20px auto 40px auto; color: #666;">A digitalização do meio rural, muitas vezes chamada de Agricultura 4.0, trouxe ferramentas que otimizam cada etapa da produção:</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Drones e Satélites</h3>
+                    <p>Monitoram lavouras em tempo real, identificando focos de pragas, estresse hídrico ou falhas de plantio antes que se espalhem. Isso evita o desperdício e o uso desnecessário de insumos.</p>
+                </div>
+                <div class="card">
+                    <h3>Sensores IoT</h3>
+                    <p>Espalhados pelo solo, medem a umidade e os nutrientes exatos da terra, permitindo uma irrigação inteligente que economiza água (Internet das Coisas).</p>
+                </div>
+                <div class="card">
+                    <h3>Maquinário Autônomo e GPS</h3>
+                    <p>Tratores e colheitadeiras guiados por satélite evitam a compactação do solo e garantem que sementes e fertilizantes sejam aplicados com precisão milimétrica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sustentabilidade" style="background-color: #f1f5f2;">
+        <div class="container">
+            <h2 class="section-title">Práticas Sustentáveis na Prática</h2>
+            <p style="text-align: center; max-width: 700px; margin: -20px auto 40px auto; color: #666;">Aliada à tecnologia, a gestão sustentável garante a saúde da terra para as próximas gerações.</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Integração Lavoura-Pecuária-Floresta</h3>
+                    <p>Um sistema que reúne cultivos, criação de gado e árvores na mesma área. Além de otimizar o espaço, melhora o bem-estar animal e ajuda a sequestrar carbono da atmosfera.</p>
+                </div>
+                <div class="card">
+                    <h3>Bioinsumos</h3>
+                    <p>O uso de defensores biológicos (como fungos e bactérias benéficas) reduz a dependência de produtos químicos tradicionais, protegendo o solo e os lençóis freáticos.</p>
+                </div>
+                <div class="card">
+                    <h3>Plantio Direto</h3>
+                    <p>Técnica que cultiva a terra sem revolvê-la, mantendo a palhada do cultivo anterior. Isso protege o solo contra a erosão e mantém a umidade natural por mais tempo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="futuro">
+        <div class="container">
+            <h2 class="section-title">O Impacto para o Futuro</h2>
+            
+            <div class="highlight-section">
+                <p style="font-weight: bold; color: var(--primary-color); margin-bottom: 10px; text-transform: uppercase; font-size: 14px; letter-spacing: 1px;">Segurança Alimentar e Climatológica</p>
+                <blockquote>
+                    "Garantir comida para uma população global em crescimento só é possível se protegermos os recursos naturais que tornam a produção viável."
+                </blockquote>
+            </div>
+
+            <p style="text-align: center; margin-top: 40px; font-size: 18px; color: #444; max-width: 900px; margin-left: auto; margin-right: auto;">
+                A tecnologia e a sustentabilidade no campo provam que a produtividade e o respeito à natureza não são excludentes, mas sim <strong>parceiros inseparáveis</strong>. O campo do futuro já começou, e ele é inteligente, verde e essencial para a vida no planeta.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AgroForte Sustentável. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        menuToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            
+            // Animação simples do ícone hambúrguer (opcional)
+            menuToggle.classList.toggle('open');
+        });
+
+        // Fecha o menu ao clicar em qualquer link (melhor experiência mobile)
+        const navLinks = document.querySelectorAll('#nav-list a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
