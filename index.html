@@ -1,381 +1,381 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte, Futuro Sustentável</title>
-    <style>
-        /* --- Configurações Gerais e Paleta de Cores --- */
-        :root {
-            --primary-color: #2d6a4f; /* Verde Forte */
-            --secondary-color: #52b788; /* Verde Claro/Destaque */
-            --dark-color: #1b4332; /* Verde Escuro/Texto */
-            --light-bg: #f8f9fa; /* Off-white para o fundo */
-            --white: #ffffff;
-            --text-color: #333333;
-            --transition: all 0.3s ease;
+<!DOCTYPE html><html lang="pt-BR" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>AgroForte - Transformando o Campo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background-color: rgba(27, 67, 50, 0.2); border-radius: 10px; }
+       
+        /* Smooth Entrance Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
         }
-
-        body {
-            background-color: var(--light-bg);
-            color: var(--text-color);
-            line-height: 1.6;
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* --- Cabeçalho e Menu --- */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .logo span {
-            color: var(--secondary-color);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 25px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Menu Hambúrguer (Mobile) */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background-color: var(--primary-color);
-            margin: 2px 0;
-            transition: var(--transition);
-        }
-
-        /* --- Seção Hero (Banner Principal) --- */
-        .hero {
-            background: linear-gradient(rgba(27, 67, 50, 0.85), rgba(27, 67, 50, 0.85)), linear-gradient(135deg, #2d6a4f, #1b4332);
-            color: var(--white);
-            padding: 160px 0 100px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-            opacity: 0.9;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--dark-color);
-            padding: 12px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: var(--transition);
-        }
-
-        .btn:hover {
-            background-color: var(--white);
-            color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        /* --- Seções de Conteúdo --- */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            color: var(--dark-color);
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 10px auto 0 auto;
-            border-radius: 2px;
-        }
-
-        /* Grid de Cards */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            transition: var(--transition);
-            border-top: 4px solid var(--primary-color);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        }
-
-        .card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        /* Seção de Destaque / Frase */
-        .highlight-section {
-            background-color: var(--white);
-            text-align: center;
-            border-left: 5px solid var(--primary-color);
-            padding: 40px;
-            border-radius: 4px;
-            margin-top: 40px;
-        }
-
-        .highlight-section blockquote {
-            font-size: 22px;
-            font-style: italic;
-            color: var(--dark-color);
-            font-weight: 500;
-        }
-
-        /* --- Rodapé --- */
-        footer {
-            background-color: var(--dark-color);
-            color: var(--white);
-            text-align: center;
-            padding: 40px 0;
-            font-size: 14px;
-        }
-
-        footer p {
-            opacity: 0.8;
-        }
-
-        /* --- Responsividade (Mobile) --- */
-        @media (max-width: 768px) {
-            .nav-container {
-                position: relative;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: var(--white);
-                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
-                padding: 20px 0;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            nav ul li {
-                margin: 15px 0;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
     </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#75daa8", "surface-bright": "#f8f9fa", "on-background": "#191c1d", "surface-variant": "#e1e3e4", "on-tertiary-fixed": "#002113", "on-tertiary": "#ffffff", "background": "#f8f9fa", "error-container": "#ffdad6", "on-tertiary-container": "#53b889", "on-primary-fixed": "#002114", "secondary-fixed-dim": "#95d4b3", "on-secondary-fixed": "#002114", "on-surface-variant": "#414844", "tertiary-fixed": "#92f7c3", "secondary-fixed": "#b1f0ce", "outline": "#717973", "inverse-on-surface": "#f0f1f2", "tertiary": "#002d1b", "inverse-surface": "#2e3132", "surface-container-low": "#f3f4f5", "surface-tint": "#3f6653", "surface-dim": "#d9dadb", "on-secondary-fixed-variant": "#0e5138", "on-error": "#ffffff", "tertiary-container": "#00452c", "error": "#ba1a1a", "on-secondary": "#ffffff", "on-tertiary-fixed-variant": "#005235", "surface-container-highest": "#e1e3e4", "primary-fixed-dim": "#a5d0b9", "inverse-primary": "#a5d0b9", "secondary-container": "#aeeecb", "on-primary-fixed-variant": "#274e3d", "surface-container": "#edeeef", "on-secondary-container": "#316e52", "on-error-container": "#93000a", "surface-container-lowest": "#ffffff", "on-surface": "#191c1d", "primary": "#012d1d", "surface-container-high": "#e7e8e9", "surface": "#f8f9fa", "on-primary-container": "#86af99", "secondary": "#2c694e", "outline-variant": "#c1c8c2", "on-primary": "#ffffff", "primary-container": "#1b4332", "primary-fixed": "#c1ecd4"
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    spacing: { "md": "16px", "base": "4px", "sm": "8px", "margin-desktop": "64px", "xl": "48px", "xs": "4px", "lg": "24px", "margin-mobile": "16px", "gutter": "24px" },
+                    fontFamily: { "display-lg": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "label-md": ["Inter"], "headline-lg-mobile": ["Inter"], "body-md": ["Inter"], "label-sm": ["Inter"] },
+                    fontSize: {
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "500" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "600" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "label-sm": ["12px", { lineHeight: "16px", fontWeight: "600" }]
+                    },
+                    boxShadow: {
+                        'level-1': '0px 2px 4px rgba(27, 67, 50, 0.05)',
+                        'level-2': '0px 8px 16px rgba(27, 67, 50, 0.1)',
+                        'level-3': '0px 16px 32px rgba(27, 67, 50, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-
-    <header>
-        <div class="container nav-container">
-            <div class="logo">Agro<span>Forte</span></div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <nav>
-                <ul id="nav-list">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#tecnologia">Tecnologia</a></li>
-                    <li><a href="#sustentabilidade">Sustentabilidade</a></li>
-                    <li><a href="#futuro">Futuro</a></li>
-                </ul>
-            </nav>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- Drawer Overlay -->
+<div aria-hidden="true" class="fixed inset-0 bg-surface-tint/20 backdrop-blur-sm z-40 hidden transition-opacity opacity-0" id="drawer-overlay"></div>
+<!-- Navigation Drawer -->
+<nav aria-label="Menu Principal" class="fixed top-0 left-0 h-full w-[280px] rounded-r-xl bg-surface-container-low shadow-xl z-50 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col py-lg" id="nav-drawer">
+<div class="px-margin-mobile mb-lg">
+<h2 class="font-headline-md text-headline-md font-bold text-secondary">AgroForte Menu</h2>
+</div>
+<ul class="flex-1 space-y-sm" role="menu">
+<li role="none" class="">
+<a aria-current="page" class="flex items-center space-x-md py-sm px-md mx-2 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md active:scale-95 transition-transform" href="#" role="menuitem">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="">Início</span>
+</a>
+</li>
+<li role="none" class="">
+<a class="flex items-center space-x-md py-sm px-md mx-2 text-on-surface-variant hover:bg-surface-variant rounded-full font-label-md text-label-md transition-colors active:scale-95" href="#" role="menuitem">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="">Soluções</span>
+</a>
+</li>
+<li role="none" class="">
+<a class="flex items-center space-x-md py-sm px-md mx-2 text-on-surface-variant hover:bg-surface-variant rounded-full font-label-md text-label-md transition-colors active:scale-95" href="#" role="menuitem">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="">Tecnologia</span>
+</a>
+</li>
+<li role="none" class="">
+<a class="flex items-center space-x-md py-sm px-md mx-2 text-on-surface-variant hover:bg-surface-variant rounded-full font-label-md text-label-md transition-colors active:scale-95" href="#" role="menuitem">
+<span class="material-symbols-outlined" data-icon="eco">eco</span>
+<span class="">Sustentabilidade</span>
+</a>
+</li>
+<li role="none" class="">
+<a class="flex items-center space-x-md py-sm px-md mx-2 text-on-surface-variant hover:bg-surface-variant rounded-full font-label-md text-label-md transition-colors active:scale-95" href="#" role="menuitem">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="">Contato</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-30 bg-surface/80 backdrop-blur-md shadow-sm flex items-center justify-between px-margin-mobile h-16 transition-colors duration-200">
+<button aria-controls="nav-drawer" aria-expanded="false" aria-label="Abrir menu" class="p-xs text-primary hover:bg-surface-container-low transition-colors duration-200 rounded-full active:scale-95 focus:outline-none focus:ring-2 focus:ring-secondary" id="menu-btn">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-headline-lg-mobile text-[22px] font-bold text-secondary">
+            AgroForte
         </div>
-    </header>
-
-    <section id="inicio" class="hero">
-        <div class="container">
-            <h1>Agro Forte, Futuro Sustentável</h1>
-            <p>O futuro do planeta passa, obrigatoriamente, pelas linhas de plantio e pelas pastagens. Uma força econômica que se moderniza para produzir mais, utilizando menos recursos e preservando a biodiversidade.</p>
-            <a href="#tecnologia" class="btn">Conheça a Tecnologia</a>
+<button aria-label="Perfil do Usuário" class="p-xs text-primary hover:bg-surface-container-low transition-colors duration-200 rounded-full active:scale-95 focus:outline-none focus:ring-2 focus:ring-secondary">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</header>
+<main class="pt-16 pb-xl">
+<!-- Hero Section -->
+<section class="relative w-full min-h-[85vh] flex flex-col justify-end px-margin-mobile pb-xl overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Drone agrícola pulverizando plantação ao pôr do sol" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsIA-F5UusPLEtkA6sKucbZOVWu4o9siHs7P2h4YBf67dmXSCUd17GS7QjmoxUlOkJHgsGIxlmLqvqGh5VLzNSHXB87W59JaWTclS_qXHwGX53wJbZajN7OhvIo4WHFcQ80NWvwPK--QKHCkyNKSs1tPL0sWNSlWepWZtUJa_kRC3_dF4460MA1jfYxoBUe81Ud3W2z1cP6rYZeV6OkW3MIDA-wjr--yKuZhj0AQA54L79zwK767TvCAg">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-primary/20 mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 fade-in-up max-w-2xl" style="animation-play-state: running;">
+<span class="inline-block px-sm py-xs mb-sm bg-tertiary-fixed-dim/20 text-tertiary-fixed backdrop-blur-md rounded-full font-label-sm text-label-sm uppercase tracking-wider border border-tertiary-fixed/30 shadow-level-1">Agricultura 4.0</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-primary mb-sm leading-tight text-balance">
+                    Transformando o Campo com Inteligência e Inovação
+                </h1>
+<p class="font-body-md text-body-md text-primary-fixed mb-lg opacity-90 text-balance">
+                    O Futuro do Agronegócio Já Chegou.
+                </p>
+<button class="w-full py-md px-lg bg-secondary hover:bg-secondary/90 text-on-primary rounded-xl font-label-md text-label-md shadow-level-2 transition-all active:scale-95 flex justify-center items-center gap-xs backdrop-blur-sm">
+                    Quero Modernizar Minha Lavoura
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Intro Section -->
+<section class="px-margin-mobile py-xl bg-surface">
+<div class="max-w-prose mx-auto text-center fade-in-up" style="animation-play-state: running;">
+<span class="material-symbols-outlined text-secondary text-display-lg mb-md block">psychiatry</span>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed text-balance">
+                    O campo não é mais o mesmo... Nós somos a ponte entre a tradição agrícola e as tecnologias que estão moldando o amanhã.
+                </p>
+</div>
+</section>
+<!-- Innovation Pillars (Bento Grid) -->
+<section class="px-margin-mobile py-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-lg fade-in-up" style="animation-play-state: running;">Pilares da Inovação</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Pillar 1: Precision Ag -->
+<div class="bg-surface/80 backdrop-blur-sm rounded-xl p-md shadow-level-2 border-t-4 border-secondary fade-in-up relative overflow-hidden group" style="animation-play-state: running;">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container mb-md shadow-level-1">
+<span class="material-symbols-outlined" data-icon="satellite_alt">satellite_alt</span>
+</div>
+<h3 class="font-headline-md text-[20px] text-primary mb-xs">Agricultura de Precisão</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md flex-grow">Sensores, drones e imagens de satélite.</p>
+<div class="mt-auto rounded-lg overflow-hidden h-40 relative shadow-level-1">
+<img alt="Sensor IoT no solo da plantação" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLuyKYbBnH9r5HYJbIVekrFLhwRHOrC9as29zPw1SPwoz3e7J2wW7aDeXyvGR8sJOz-JCf31Y1nDlVcCYF9usnfUdeQNwQDSD1vt9rgjOXPDUUlfReU3i_TPCdGkn31uk72bLuNM_i_nyPY_g_sKNSJq_AlD5ydZAPzB3MmtnCOLe4aXb0Im-eHmuUdhzs7SElml8-uLIlG9_tx0L6YVpcq2Xmt7mssAhBaXZC-M5tSpQZn_bopOkADZqw">
+</div>
+</div>
+</div>
+<!-- Pillar 2: Data Intelligence -->
+<div class="bg-surface/80 backdrop-blur-sm rounded-xl p-md shadow-level-1 border border-surface-variant/50 fade-in-up delay-100 flex flex-col" style="animation-play-state: running;">
+<div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container mb-md shadow-level-1">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</div>
+<h3 class="font-headline-md text-[20px] text-primary mb-xs">Inteligência de Dados</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Plataformas que cruzam dados climáticos e de solo para decisões assertivas.</p>
+</div>
+<!-- Pillar 3: Automation -->
+<div class="bg-surface/80 backdrop-blur-sm rounded-xl p-md shadow-level-2 border border-surface-variant/50 fade-in-up delay-200 flex flex-col relative overflow-hidden group" style="animation-play-state: running;">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container mb-md shadow-level-1">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span>
+</div>
+<h3 class="font-headline-md text-[20px] text-primary mb-xs">Automação e Robótica</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Conectividade e maquinário autônomo.</p>
+<div class="mt-auto rounded-lg overflow-hidden h-40 relative shadow-level-1">
+<img alt="Trator autônomo operando no campo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLvJXOy5LlHLIIYGHl1RUaQPJLxfuy3pCYmKfHdsjkJkCEJTuY6EhulRoHb3DDLrTINxS21SX6pRu0Ix_sMQx0n2pGJHjFcrCfbqWgJj9T5EMXfskr0joCmfxHgQSJvnUXj3bJKK0_r989j1ax3Y7uOFS2wRaufd6GPVo4Ujw8q0SpZEnk5N_kad3JtOzBBXt0FcMX_EZdlo7ksB2wRTWxmxDhUDr5iQHeDpVPC6RCbWXt_Q3_mTwYMkNQ">
+</div>
+</div>
+<!-- Pillar 4: Sustainability -->
+<div class="bg-surface/80 backdrop-blur-sm rounded-xl p-md shadow-level-1 border border-surface-variant/50 fade-in-up delay-300 flex flex-col" style="animation-play-state: running;">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed mb-md shadow-level-1">
+<span class="material-symbols-outlined" data-icon="eco">eco</span>
+</div>
+<h3 class="font-headline-md text-[20px] text-primary mb-xs">Sustentabilidade Lucrativa</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Soluções que protegem recursos e elevam a produção.</p>
+</div>
+</div>
+</section>
+<!-- Quote Section -->
+<section class="px-margin-mobile py-xl bg-surface-container-low my-lg rounded-xl mx-margin-mobile shadow-sm">
+<blockquote class="relative text-center fade-in-up px-sm" style="animation-play-state: running;">
+<span class="material-symbols-outlined text-[48px] text-surface-tint/10 absolute -top-6 left-1/2 -translate-x-1/2">format_quote</span>
+<p class="relative z-10 font-headline-lg-mobile text-[22px] text-primary italic leading-relaxed text-balance pt-sm">
+                    "A inovação no campo não serve para substituir o agricultor, mas para dar a ele superpoderes."
+                </p>
+</blockquote>
+</section>
+<!-- Comparison Table (Mobile Card View) -->
+<section class="px-margin-mobile py-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-lg fade-in-up" style="animation-play-state: running;">Por que Conectar sua Produção?</h2>
+<div class="space-y-md">
+<!-- Row 1 -->
+<div class="bg-surface/80 backdrop-blur-sm rounded-xl p-md shadow-level-1 fade-in-up border border-surface-variant/50" style="animation-play-state: running;">
+<div class="flex items-start gap-sm mb-sm">
+<span class="material-symbols-outlined text-error mt-xs text-[20px]">cancel</span>
+<div>
+<span class="block font-label-sm text-label-sm text-outline uppercase tracking-wide">Desafio Tradicional</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Desperdício de insumos</span>
+</div>
+</div>
+<div class="flex items-start gap-sm mb-sm pl-6 border-l-2 border-surface-variant ml-2 my-2">
+<span class="material-symbols-outlined text-tertiary mt-xs text-[20px]">memory</span>
+<div>
+<span class="block font-label-sm text-label-sm text-outline uppercase tracking-wide">Solução Tecnológica</span>
+<span class="font-body-md text-body-md text-on-surface">Aplicação em taxa variável</span>
+</div>
+</div>
+<div class="flex items-start gap-sm bg-secondary-container/30 p-sm rounded-lg">
+<span class="material-symbols-outlined text-secondary mt-xs text-[20px]">check_circle</span>
+<div>
+<span class="block font-label-sm text-label-sm text-secondary uppercase tracking-wide">O Resultado Prático</span>
+<span class="font-body-md text-body-md text-on-secondary-container font-medium">Economia real e menor impacto ambiental.</span>
+</div>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="bg-surface/80 backdrop-blur-sm rounded-xl p-md shadow-level-1 fade-in-up delay-100 border border-surface-variant/50" style="animation-play-state: running;">
+<div class="flex items-start gap-sm mb-sm">
+<span class="material-symbols-outlined text-error mt-xs text-[20px]">cancel</span>
+<div>
+<span class="block font-label-sm text-label-sm text-outline uppercase tracking-wide">Desafio Tradicional</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Previsões climáticas incertas</span>
+</div>
+</div>
+<div class="flex items-start gap-sm mb-sm pl-6 border-l-2 border-surface-variant ml-2 my-2">
+<span class="material-symbols-outlined text-tertiary mt-xs text-[20px]">memory</span>
+<div>
+<span class="block font-label-sm text-label-sm text-outline uppercase tracking-wide">Solução Tecnológica</span>
+<span class="font-body-md text-body-md text-on-surface">Monitoramento agrometeorológico</span>
+</div>
+</div>
+<div class="flex items-start gap-sm bg-secondary-container/30 p-sm rounded-lg">
+<span class="material-symbols-outlined text-secondary mt-xs text-[20px]">check_circle</span>
+<div>
+<span class="block font-label-sm text-label-sm text-secondary uppercase tracking-wide">O Resultado Prático</span>
+<span class="font-body-md text-body-md text-on-secondary-container font-medium">Prevenção de perdas.</span>
+</div>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="bg-surface/80 backdrop-blur-sm rounded-xl p-md shadow-level-1 fade-in-up delay-200 border border-surface-variant/50" style="animation-play-state: running;">
+<div class="flex items-start gap-sm mb-sm">
+<span class="material-symbols-outlined text-error mt-xs text-[20px]">cancel</span>
+<div>
+<span class="block font-label-sm text-label-sm text-outline uppercase tracking-wide">Desafio Tradicional</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Gestão às cegas</span>
+</div>
+</div>
+<div class="flex items-start gap-sm mb-sm pl-6 border-l-2 border-surface-variant ml-2 my-2">
+<span class="material-symbols-outlined text-tertiary mt-xs text-[20px]">memory</span>
+<div>
+<span class="block font-label-sm text-label-sm text-outline uppercase tracking-wide">Solução Tecnológica</span>
+<span class="font-body-md text-body-md text-on-surface">Dashboards integrados</span>
+</div>
+</div>
+<div class="flex items-start gap-sm bg-secondary-container/30 p-sm rounded-lg">
+<span class="material-symbols-outlined text-secondary mt-xs text-[20px]">check_circle</span>
+<div>
+<span class="block font-label-sm text-label-sm text-secondary uppercase tracking-wide">O Resultado Prático</span>
+<span class="font-body-md text-body-md text-on-secondary-container font-medium">Controle total do custo por hectare.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="px-margin-mobile py-xl text-center fade-in-up" style="animation-play-state: running;">
+<h2 class="font-headline-md text-headline-md text-primary mb-md">Prepare-se para a Próxima Safra</h2>
+<a href="mailto:cavalheiro.neves@escola.pr.gov.br" class="inline-block w-full py-md px-lg bg-primary hover:bg-primary/90 text-on-primary rounded-xl font-label-md text-label-md shadow-level-2 transition-all active:scale-95 text-center">
+    Falar com um Especialista
+</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container text-on-primary-container w-full rounded-t-xl flex flex-col items-center justify-center py-lg px-margin-mobile space-y-md text-center">
+<div class="font-headline-md text-[20px] font-bold text-on-primary-container">
+            AgroForte
         </div>
-    </section>
+<div class="flex gap-md font-label-sm text-label-sm">
+<a class="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity cursor-pointer" href="#">Privacidade</a>
+<a class="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity cursor-pointer" href="#">Termos de Uso</a>
+<a class="opacity-80 hover:opacity-100 hover:text-secondary-fixed transition-opacity cursor-pointer" href="#">Suporte</a>
+</div>
+<p class="font-label-sm text-label-sm opacity-60">
+            © 2024 AgroForte. Cultivando o futuro com precisão.
+        </p>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('menu-btn');
+            const drawer = document.getElementById('nav-drawer');
+            const overlay = document.getElementById('drawer-overlay');
+            const menuItems = drawer.querySelectorAll('a');
+           
+            let isDrawerOpen = false;
 
-    <section id="tecnologia">
-        <div class="container">
-            <h2 class="section-title">A Revolução Tecnológica no Campo</h2>
-            <p style="text-align: center; max-width: 700px; margin: -20px auto 40px auto; color: #666;">A digitalização do meio rural, muitas vezes chamada de Agricultura 4.0, trouxe ferramentas que otimizam cada etapa da produção:</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h3>Drones e Satélites</h3>
-                    <p>Monitoram lavouras em tempo real, identificando focos de pragas, estresse hídrico ou falhas de plantio antes que se espalhem. Isso evita o desperdício e o uso desnecessário de insumos.</p>
-                </div>
-                <div class="card">
-                    <h3>Sensores IoT</h3>
-                    <p>Espalhados pelo solo, medem a umidade e os nutrientes exatos da terra, permitindo uma irrigação inteligente que economiza água (Internet das Coisas).</p>
-                </div>
-                <div class="card">
-                    <h3>Maquinário Autônomo e GPS</h3>
-                    <p>Tratores e colheitadeiras guiados por satélite evitam a compactação do solo e garantem que sementes e fertilizantes sejam aplicados com precisão milimétrica.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            function toggleDrawer() {
+                isDrawerOpen = !isDrawerOpen;
+                menuBtn.setAttribute('aria-expanded', isDrawerOpen);
+               
+                if (isDrawerOpen) {
+                    drawer.classList.remove('-translate-x-full');
+                    overlay.classList.remove('hidden');
+                    // Small delay to allow display:block to apply before animating opacity
+                    setTimeout(() => overlay.classList.add('opacity-100'), 10);
+                    // Trap focus (basic implementation)
+                    menuItems[0].focus();
+                } else {
+                    drawer.classList.add('-translate-x-full');
+                    overlay.classList.remove('opacity-100');
+                    setTimeout(() => overlay.classList.add('hidden'), 300); // match transition duration
+                    menuBtn.focus();
+                }
+            }
 
-    <section id="sustentabilidade" style="background-color: #f1f5f2;">
-        <div class="container">
-            <h2 class="section-title">Práticas Sustentáveis na Prática</h2>
-            <p style="text-align: center; max-width: 700px; margin: -20px auto 40px auto; color: #666;">Aliada à tecnologia, a gestão sustentável garante a saúde da terra para as próximas gerações.</p>
-            
-            <div class="grid">
-                <div class="card">
-                    <h3>Integração Lavoura-Pecuária-Floresta</h3>
-                    <p>Um sistema que reúne cultivos, criação de gado e árvores na mesma área. Além de otimizar o espaço, melhora o bem-estar animal e ajuda a sequestrar carbono da atmosfera.</p>
-                </div>
-                <div class="card">
-                    <h3>Bioinsumos</h3>
-                    <p>O uso de defensores biológicos (como fungos e bactérias benéficas) reduz a dependência de produtos químicos tradicionais, protegendo o solo e os lençóis freáticos.</p>
-                </div>
-                <div class="card">
-                    <h3>Plantio Direto</h3>
-                    <p>Técnica que cultiva a terra sem revolvê-la, mantendo a palhada do cultivo anterior. Isso protege o solo contra a erosão e mantém a umidade natural por mais tempo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="futuro">
-        <div class="container">
-            <h2 class="section-title">O Impacto para o Futuro</h2>
-            
-            <div class="highlight-section">
-                <p style="font-weight: bold; color: var(--primary-color); margin-bottom: 10px; text-transform: uppercase; font-size: 14px; letter-spacing: 1px;">Segurança Alimentar e Climatológica</p>
-                <blockquote>
-                    "Garantir comida para uma população global em crescimento só é possível se protegermos os recursos naturais que tornam a produção viável."
-                </blockquote>
-            </div>
-
-            <p style="text-align: center; margin-top: 40px; font-size: 18px; color: #444; max-width: 900px; margin-left: auto; margin-right: auto;">
-                A tecnologia e a sustentabilidade no campo provam que a produtividade e o respeito à natureza não são excludentes, mas sim <strong>parceiros inseparáveis</strong>. O campo do futuro já começou, e ele é inteligente, verde e essencial para a vida no planeta.
-            </p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 AgroForte Sustentável. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <script>
-        const menuToggle = document.getElementById('mobile-menu');
-        const navList = document.getElementById('nav-list');
-
-        menuToggle.addEventListener('click', () => {
-            navList.classList.toggle('active');
-            
-            // Animação simples do ícone hambúrguer (opcional)
-            menuToggle.classList.toggle('open');
-        });
-
-        // Fecha o menu ao clicar em qualquer link (melhor experiência mobile)
-        const navLinks = document.querySelectorAll('#nav-list a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navList.classList.remove('active');
+            menuBtn.addEventListener('click', toggleDrawer);
+            overlay.addEventListener('click', toggleDrawer);
+           
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && isDrawerOpen) {
+                    toggleDrawer();
+                }
             });
+
+            // Intersection Observer for scroll animations (if elements are below fold)
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Pause animations initially if they are below the fold (simple approach)
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+           
+            // Trigger immediately for items high up
+            setTimeout(() => {
+                document.querySelectorAll('.fade-in-up').forEach(el => {
+                    if(el.getBoundingClientRect().top < window.innerHeight) {
+                         el.style.animationPlayState = 'running';
+                    }
+                });
+            }, 100);
         });
     </script>
-</body>
-</html>
+
+
+<a href="mailto:cavalheiro.neves@escola.pr.gov.br" class="fixed bottom-6 right-6 z-50 flex items-center gap-sm group">
+  <span class="bg-surface-container-lowest text-primary font-label-sm px-sm py-xs rounded-lg shadow-level-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+    Guia IA
+  </span>
+  <div class="w-16 h-16 bg-primary-container text-on-primary rounded-full flex items-center justify-center shadow-xl active:scale-95 transition-transform duration-200 fade-in-up">
+    <span class="material-symbols-outlined text-[32px]">smart_toy</span>
+  </div>
+</a></body></html>
